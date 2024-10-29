@@ -1,0 +1,5 @@
+Mobile System and Application deveoplemnt:
+Function components (function prototype):
+	1- Function name
+	2- function parameters
+	3- Return value

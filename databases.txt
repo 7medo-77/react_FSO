@@ -1,0 +1,5 @@
+Composite and multi-valued attributes:
+	If an attribute is composite and multi-valued, it is usually added as
+	as new entity(table)
+
+

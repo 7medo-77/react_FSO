@@ -1,0 +1,15 @@
+UML:
+Behavioral diagram:
+	Use-case:
+		Business rules
+		Business process
+	Activity Diagram
+		Start:
+			dot(.)
+		End:
+			dot(.) with delineated border
+	Status Machine
+	Sequence
+Structural Diagram:
+	Class diagram: OOP representaion of the ERD
+
