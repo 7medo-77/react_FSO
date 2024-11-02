@@ -4,13 +4,19 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 const Hello = (props) => {
-  console.log(props)
+  const bornYear = () => {
+    const thisYear = new Date().getFullYear();
+    return thisYear - props.age;
+  }
   return (
-    <div>
+    <>
       <p>
-        Hello {props.name}! Your age is {props.age}
+        Hello, {props.name}, you are {props.age} years old!
       </p>
-    </div>
+      <p>
+        You were born in {bornYear()}
+      </p>
+    </>
   )
 }
 
