@@ -8,12 +8,15 @@ const App = () => {
     right: 0,
     left: 0,
   });
+  const [allClicks, addClick] = useState([]);
+  console.log(allClicks);
 
   const decrementLeft = () => {
     setCount({
       ...count,
       left: count.left - 1
     });
+    addClick([...allClicks, '-L']);
   }
 
   const incrementLeft = () => {
@@ -21,6 +24,7 @@ const App = () => {
       ...count,
       left: count.left + 1
     });
+    addClick([...allClicks, '+L']);
   }
 
   const decrementRight = () => {
@@ -28,6 +32,7 @@ const App = () => {
       ...count,
       right: count.right - 1
     });
+    addClick([...allClicks, '-R']);
   }
 
   const incrementRight = () => {
@@ -35,6 +40,7 @@ const App = () => {
       ...count,
       right: count.right + 1
     });
+    addClick([...allClicks, '+R']);
   }
 
   return (
