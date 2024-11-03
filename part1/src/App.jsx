@@ -3,23 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-const CounterButton = (props) => {
-  console.log(props);
-
-  return (
-    <button onClick={props.onClick} >{props.text}</button>
-  )
-}
-
-const DisplayCounter = ({counter}) => {
-  return (
-    <div>{counter}</div>
-  )
-}
-
 const App = () => {
-  const [counter, setCounter] = useState(0);
-  // console.log(counter);
+  const [right, setRight] = useState(0);
+  const [left, setLeft] = useState(0);
 
   const decrementFunction = () => {
     setCounter(counter - 1);
@@ -30,11 +16,12 @@ const App = () => {
   }
 
   return (
-    <>
-      <CounterButton onClick={incrementFunction} text='Increment' />
-      <DisplayCounter counter={counter} />
-      <CounterButton onClick={decrementFunction} text='Decrement' />
-    </>
+    <div>
+      <button onClick={() => setRight(right + 1)} >Right</button>
+      {right}
+      <button onClick={() => setLeft(left + 1)} >Left</button>
+      <p>{left}</p>
+    </div>
   )
 }
 
