@@ -4,23 +4,51 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 const App = () => {
-  const [right, setRight] = useState(0);
-  const [left, setLeft] = useState(0);
+  const [count, setCount] = useState({
+    right: 0,
+    left: 0,
+  });
 
-  const decrementFunction = () => {
-    setCounter(counter - 1);
+  const decrementLeft = () => {
+    setCount({
+      ...count,
+      left: count.left - 1
+    });
   }
 
-  const incrementFunction = () => {
-    setCounter(counter + 1);
+  const incrementLeft = () => {
+    setCount({
+      ...count,
+      left: count.left + 1
+    });
+  }
+
+  const decrementRight = () => {
+    setCount({
+      ...count,
+      right: count.right - 1
+    });
+  }
+
+  const incrementRight = () => {
+    setCount({
+      ...count,
+      right: count.right + 1
+    });
   }
 
   return (
     <div>
-      <button onClick={() => setRight(right + 1)} >Right</button>
-      {right}
-      <button onClick={() => setLeft(left + 1)} >Left</button>
-      <p>{left}</p>
+      <div>
+        <button onClick={decrementLeft} >Decrement</button>
+        {count.left}
+        <button onClick={incrementLeft} >Increment</button>
+      </div>
+      <div>
+        <button onClick={decrementRight} >Decrement</button>
+        {count.right}
+        <button onClick={incrementRight} >increment</button>
+      </div>
     </div>
   )
 }
