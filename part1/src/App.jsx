@@ -3,6 +3,14 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const ChangeButton = ({handleClick, text}) => {
+  return (
+    <button onClick={handleClick}>
+      {text}
+    </button>
+  )
+}
+
 const DisplayClickHistory = ({allClicks}) => {
   return (
     <>
@@ -24,10 +32,8 @@ const App = () => {
       ...count,
       left: count.left - 1
     });
-    console.log(allClicks.length);
     addClick([...allClicks, '-L']);
-    console.log(allClicks.length+1);
-    // addTotalClicks(totalClicks + 1);
+    addTotalClicks(totalClicks + 1);
   }
 
   const incrementLeft = () => {
@@ -35,10 +41,8 @@ const App = () => {
       ...count,
       left: count.left + 1
     });
-    console.log(allClicks.length);
     addClick([...allClicks, '+L']);
-    console.log(allClicks.length+1);
-    // addTotalClicks(totalClicks + 1);
+    addTotalClicks(totalClicks + 1);
   }
 
   const decrementRight = () => {
@@ -46,10 +50,8 @@ const App = () => {
       ...count,
       right: count.right - 1
     });
-    console.log(allClicks.length);
     addClick([...allClicks, '-R']);
-    console.log(allClicks.length+1);
-    // addTotalClicks(totalClicks + 1);
+    addTotalClicks(totalClicks + 1);
   }
 
   const incrementRight = () => {
@@ -57,23 +59,21 @@ const App = () => {
       ...count,
       right: count.right + 1
     });
-    console.log(allClicks.length);
     addClick([...allClicks, '+R']);
-    console.log(allClicks.length+1);
-    // addTotalClicks(totalClicks + 1);
+    addTotalClicks(totalClicks + 1);
   }
 
   return (
     <div>
       <div>
-        <button onClick={decrementLeft} >Decrement</button>
+        <ChangeButton handleClick={decrementLeft} text='Decrement'/>
         {count.left}
-        <button onClick={incrementLeft} >Increment</button>
+        <ChangeButton handleClick={incrementLeft} text='Increment'/>
       </div>
       <div>
-        <button onClick={decrementRight} >Decrement</button>
+        <ChangeButton handleClick={decrementRight} text='Decrement'/>
         {count.right}
-        <button onClick={incrementRight} >increment</button>
+        <ChangeButton handleClick={incrementRight} text='Increment'/>
       </div>
 
       <DisplayClickHistory allClicks={allClicks} />
