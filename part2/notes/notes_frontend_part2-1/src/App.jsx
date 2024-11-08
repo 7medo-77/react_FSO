@@ -8,30 +8,40 @@ const App = (props) => {
     'a new note...'
   )
 
-// const notes = [
-//   {
-//     id: 1,
-//     content: 'HTML is easy',
-//     important: true
-//   },
-//   {
-//     id: 2,
-//     content: 'Browser can execute only JavaScript',
-//     important: false
-//   },
-//   {
-//     id: 3,
-//     content: 'GET and POST are the most important methods of HTTP protocol',
-//     important: true
-//   }
-// ]
+  // const notes = [
+  //   {
+  //     id: 1,
+  //     content: 'HTML is easy',
+  //     important: true
+  //   },
+  //   {
+  //     id: 2,
+  //     content: 'Browser can execute only JavaScript',
+  //     important: false
+  //   },
+  //   {
+  //     id: 3,
+  //     content: 'GET and POST are the most important methods of HTTP protocol',
+  //     important: true
+  //   }
+  // ]
 
   const addNote = (event) => {
-    
+    event.preventDefault()
+    console.log(newNote)
+
+    const newNoteObject = {
+      id: notes.length + 1,
+      content: newNote,
+      important: Math.random() < 0.5,
+    }
+
+    setNotes(notes.concat(newNoteObject))
+    setNewNote('')
   }
 
   const handleNoteChange = (event) => {
-    console.log(event.target.value)
+    // console.log(event.target.value)
     setNewNote(event.target.value)
   }
 
