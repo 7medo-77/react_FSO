@@ -4,3 +4,4 @@ components folders is divided into two folders, one for authorized and another f
 components which contain other components to be imported in the page are named Component.Page.tsx
 each component interface is placed as a sibling to the component, named as the following: Component.model.ts
 liberal use of custom hooks to better manage code
+adding file groups that do not correspond to routes in the app is done by placing the group name inside brackets. This is called segments
